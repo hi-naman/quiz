@@ -9,12 +9,44 @@
 <body>
   <div class="container">
     <h1>Quiz App</h1>
-    <div id="quiz-box">
-      <div id="question">Loading question...</div>
-      <div id="options"></div>
-      <button onclick="nextQuestion()">Next</button>
+
+    <!-- Search Bar -->
+    <input
+      type="text"
+      id="searchInput"
+      class="search-bar"
+      placeholder="Search quiz topics like Science, Sports, Movies..."
+      onkeyup="filterTopics()"
+    />
+
+    <!-- Quiz Sections -->
+    <div id="topics">
+
+      <div class="topic-section" data-topic="sports">
+        <h2>Sports</h2>
+        <div class="question-display" id="sports-question"></div>
+        <div class="options" id="sports-options"></div>
+        <button onclick="nextTopicQuestion('sports')">Next</button>
+        <div class="topic-result" id="sports-result"></div>
+      </div>
+
+      <div class="topic-section" data-topic="movies">
+        <h2>Movies</h2>
+        <div class="question-display" id="movies-question"></div>
+        <div class="options" id="movies-options"></div>
+        <button onclick="nextTopicQuestion('movies')">Next</button>
+        <div class="topic-result" id="movies-result"></div>
+      </div>
+
+      <div class="topic-section" data-topic="technology">
+        <h2>Technology</h2>
+        <div class="question-display" id="technology-question"></div>
+        <div class="options" id="technology-options"></div>
+        <button onclick="nextTopicQuestion('technology')">Next</button>
+        <div class="topic-result" id="technology-result"></div>
+      </div>
+
     </div>
-    <div id="result"></div>
   </div>
 
   <script src="script.js"></script>
